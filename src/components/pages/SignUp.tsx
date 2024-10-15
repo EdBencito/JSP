@@ -1,11 +1,10 @@
-import React from 'react'
 import '../../App.css'
 import Footer from '../Footer'
 import SignupBox from '../SignUpBox'
 
 interface SignUpProps { }
 
-function SignUp(props: SignUpProps) {
+function SignUp(_props: SignUpProps) {
     return (
         <>
         <SignupBox />

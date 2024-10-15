@@ -1,11 +1,10 @@
-import React from 'react'
 import '../../App.css'
 import Footer from '../Footer'
 import LoginBox from '../LoginBox'
 
 interface LogInProps { }
 
-function LogIn(props: LogInProps) {
+function LogIn(_props: LogInProps) {
     return (
         <>
         <LoginBox />

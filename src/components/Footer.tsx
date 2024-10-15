@@ -1,4 +1,3 @@
-import React from 'react'
 import { Button } from './Button'
 import './Footer.css'
 import { Link } from 'react-router-dom';
@@ -6,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 interface FooterProps { }
 
-function Footer(props: FooterProps) {
+function Footer(_props: FooterProps) {
     return (
         <div className='footer-container'>
             <section className="footer-subscription">

@@ -1,11 +1,10 @@
-import React from 'react'
 import '../../App.css'
 import HeroSection from '../HeroSection'
 import Footer from '../Footer'
 
 interface HomeProps { }
 
-function Home(props: HomeProps) {
+function Home(_props: HomeProps) {
     return (
         <>
         <HeroSection /> 

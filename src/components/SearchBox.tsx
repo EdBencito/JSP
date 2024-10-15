@@ -5,15 +5,11 @@ interface SearchBoxProps {
   onSearch: (message: string, location: string) => void;
 }
 
-export const SearchBox: React.FC<SearchBoxProps> = ({ onSearch }) => {
+export const SearchBox: React.FC<SearchBoxProps> = ({ }) => {
   const [message, setMessage] = useState('');
   const [location, setLocation] = useState('');
   const [isStack, setIsStack] = useState(false);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    onSearch(message, location);
-  };
 
   useEffect(() => {
     const handleResize = () => {

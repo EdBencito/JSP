@@ -1,13 +1,11 @@
-import React from 'react'
 import '../App.css';
-import { Button } from './Button';
 import './HeroSection.css';
 import { SearchBox} from './SearchBox'
 
 
 interface HeroSectionProps { }
 
-function HeroSection(props: HeroSectionProps) {
+function HeroSection(_props: HeroSectionProps) {
     return (
         <div className='hero-container'>
             <video src="/videos/video-1.mp4" autoPlay loop muted />
@@ -18,7 +16,7 @@ function HeroSection(props: HeroSectionProps) {
                     GET STARTED
                 </Button> */}
             </div>
-            <SearchBox onSearch={function (what: string, where: string): void {
+            <SearchBox onSearch={function (_what: string, _where: string): void {
                 throw new Error('Function not implemented.');
             } } />
         </div>
