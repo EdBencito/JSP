@@ -13,7 +13,7 @@ function TileItem({ src, path }: TileItemProps) {
                     <figure className='tiles__item__pic-wrap'>
                         <img
                             className='tiles__item__img'
-                            alt='Travel Image'
+                            alt='Company Image'
                             src={src}
                         />
                     </figure>
