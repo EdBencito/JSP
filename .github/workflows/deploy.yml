@@ -11,28 +11,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the repository code
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      # Step 2: Set up Node.js environment
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Specify your Node.js version
+          node-version: '21.7.1'  # Use the appropriate Node.js version, you can change this if needed
 
+      # Step 3: Install pnpm globally
       - name: Install pnpm
         run: npm install -g pnpm
 
+      # Step 4: Install dependencies using pnpm
       - name: Install dependencies with pnpm
         run: pnpm install
 
-      - name: Build project
+      # Step 5: Build the project using Vite
+      - name: Build project with Vite
         run: pnpm run build
+        # Ensure your "build" script in package.json calls `vite build`.
 
+      # Step 6: Upload the production-ready build files
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
         with:
           name: production-files
-          path: ./dist
+          path: ./dist  # Make sure this matches the output directory from Vite
 
   deploy:
     name: Deploy
@@ -41,14 +48,16 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     steps:
+      # Step 1: Download the built files from the previous job
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
           name: production-files
           path: ./dist
 
+      # Step 2: Deploy the production files to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./dist  # Ensure this matches the directory where Vite outputs its build
