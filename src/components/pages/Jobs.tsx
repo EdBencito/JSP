@@ -37,11 +37,11 @@ function Jobs() {
 
     fetch(
       `https://jsearch.p.rapidapi.com/search?query=${message}%20in%20${location}&page=${page}&num_pages=${jobsPerPage}&date_posted=all`,
-      // ^^^^ REACHED MONTHLY QUOTA
+      // ^^^^ MAY HAVE REACHED MONTHLY QUOTA
       {
         method: 'GET',
         headers: {
-          'x-rapidapi-key': API_KEY, // Replace with your API key
+          'x-rapidapi-key': API_KEY,
           'x-rapidapi-host': API_HOST,
         },
       }

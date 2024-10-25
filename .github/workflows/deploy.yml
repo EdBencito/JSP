@@ -31,6 +31,9 @@ jobs:
 
       # Step 5: Build the project using Vite
       - name: Build project with Vite
+        env: 
+          VITE_X_RAPIDAPI_KEY: ${{ secrets.VITE_X_RAPIDAPI_KEY }}
+          VITE_X_RAPIDAPI_HOST: ${{ secrets.VITE_X_RAPIDAPI_HOST }}
         run: pnpm run build
         # Ensure your "build" script in package.json calls `vite build`.
 
